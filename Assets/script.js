@@ -3,9 +3,24 @@ var startBtn = document.querySelector('#start')
 var timerEl = document.querySelector('#timer')
 var startContainer = document.querySelector('#startBox')
 var questionContainer = document.querySelector('#question-box')
-
+var choicesDiv = document.querySelector('#choices')
+var choiceAlert = document.querySelector('#correct!')
+var questionIndex = 0
 var time = 60
 var timerId;
+
+function showQuestion() {
+    question = questions[questionIndex]
+    questionContainer.innerText = quesstion.textContent
+
+    choicesDiv.innerHTML = ''
+
+    quesiton.choices.forEach(function (choice) {
+        choicesDiv.insertAdjacentHTML('beforeend', '<button>' + choice + '</button>')
+            
+    });
+}
+
 // Questions, options, and answers to the quiz.
 var questions = [
     {
@@ -41,7 +56,7 @@ var questions = [
 ]
 
 function start() {
-    // When the user clicks the start button, then the timers count down from 60.
+    // When the user clicks the start button, then the timer count down from 60.
 
     timerId = setInterval(function () {
         time--;
