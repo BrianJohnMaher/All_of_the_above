@@ -1,4 +1,4 @@
-// Global variables
+// Assignment Code
 var startBtn = document.querySelector('#start')
 var timerEl = document.querySelector('#timer')
 var startContainer = document.querySelector('#startBox')
